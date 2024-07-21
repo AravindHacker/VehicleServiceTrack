@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
+
 
 import { AuthProvider } from './Components/AuthContext';
 import FirstLogin from './Components/FirstLogin';
@@ -31,7 +32,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <AuthProvider>
-          <Router>
+          <Router >
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/login-type" element={<FirstLogin />} />
