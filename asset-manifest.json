@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/AravindHacker/VehicleServiceTrack.git/static/css/main.144dfb75.css",
+    "main.js": "/AravindHacker/VehicleServiceTrack.git/static/js/main.2723bbad.js",
+    "static/js/592.68d504fc.chunk.js": "/AravindHacker/VehicleServiceTrack.git/static/js/592.68d504fc.chunk.js",
+    "index.html": "/AravindHacker/VehicleServiceTrack.git/index.html",
+    "main.144dfb75.css.map": "/AravindHacker/VehicleServiceTrack.git/static/css/main.144dfb75.css.map",
+    "main.2723bbad.js.map": "/AravindHacker/VehicleServiceTrack.git/static/js/main.2723bbad.js.map",
+    "592.68d504fc.chunk.js.map": "/AravindHacker/VehicleServiceTrack.git/static/js/592.68d504fc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.144dfb75.css",
+    "static/js/main.2723bbad.js"
+  ]
+}
