@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router ,Route ,Routes} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import { AuthProvider } from './Components/AuthContext';
 import FirstLogin from './Components/FirstLogin';
 import Login from './Components/Login';
 import OwnerCom from './Components/OwnerComponent';
@@ -23,41 +24,44 @@ import Notifications from './Components/OwnerComponent/serviceTracking';
 import ReviewForm from './Components/OwnerComponent/ReviewAndRating';
 import Reviews from './Components/ProviderComponent/RatingAndReviews';
 import ProviderServiceHistory from './Components/ProviderComponent/proSerivceHistory';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 function App() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                 <Router>
-                  <Routes>
-                    <Route exact path='/' element={<FirstLogin />} />
-                    <Route exact path='/owner-register' element={<OwnerRegister />} />
-                    <Route exact path='/provider-register' element={< ServiceProviderForm/>} />
-                    <Route exact path='/owner' element={<OwnerCom />} />
-                    <Route exact path='/provider' element={<ProviderCom/>} />
-                    <Route exact path='/owner/Profile info' element={<ProfileInfo/>} />
-                    <Route exact path='/provider/Profile' element={<ProviderProfile/>} />
-                    <Route exact path='/owner/Allproviders' element={<ServiceProviders />}/>
-                    <Route exact path='/login' element={<Login />} />
-                    <Route exact path='/owner/reqservice' element={<RequestService/>} />
-                    <Route exact path='/owner/vechile info' element={<VehicleInfo/>} />
-                    <Route exact path='/provider/service-info' element={<ServiceReceived/>} />
-                    <Route exact path='/profilepic' element={<ProfilePic/>} />
-                    <Route exact path='/providerpics' element={<ProviderProfilePic/>}/>
-                    <Route exact path='/owner/Upcomingservice' element={<UpcomingService/>}/>
-                    <Route exact path='/provider/upcomingservices' element={<ProUpcomingService />} />
-                    <Route exact path='/provider/scheduled-service' element={<ScheduledService/>}/>
-                    <Route exact path='/owner/servicehistory' element={<ServiceHistory/>}/>
-                    <Route exact path='/owner/notification' element={<Notifications/>}/>
-                    <Route exact path='/review' element={<ReviewForm/>}/>
-                    <Route exact path='/provider/rating&review' element={<Reviews/>}/>
-                    <Route exact path='/provider/service-history' element={<ProviderServiceHistory/>}/>
-
-                   </Routes> 
-                </Router> 
-            </header>
-        </div>
-    );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <AuthProvider>
+          <Router>
+            <Routes>
+              <Route path="/" element={<Login />} />
+              <Route path="/login-type" element={<FirstLogin />} />
+              
+              <Route path="/owner-register" element={<ProtectedRoute element={<OwnerRegister />} />} />
+              <Route path="/provider-register" element={<ProtectedRoute element={<ServiceProviderForm />} />} />
+              <Route path="/owner" element={<ProtectedRoute element={<OwnerCom />} />} />
+              <Route path="/provider" element={<ProtectedRoute element={<ProviderCom />} />} />
+              <Route path="/owner/Profile info" element={<ProtectedRoute element={<ProfileInfo />} />} />
+              <Route path="/provider/Profile" element={<ProtectedRoute element={<ProviderProfile />} />} />
+              <Route path="/owner/Allproviders" element={<ProtectedRoute element={<ServiceProviders />} />} />
+              <Route path="/owner/reqservice" element={<ProtectedRoute element={<RequestService />} />} />
+              <Route path="/owner/vechile info" element={<ProtectedRoute element={<VehicleInfo />} />} />
+              <Route path="/provider/service-info" element={<ProtectedRoute element={<ServiceReceived />} />} />
+              <Route path="/profilepic" element={<ProtectedRoute element={<ProfilePic />} />} />
+              <Route path="/providerpics" element={<ProtectedRoute element={<ProviderProfilePic />} />} />
+              <Route path="/owner/Upcomingservice" element={<ProtectedRoute element={<UpcomingService />} />} />
+              <Route path="/provider/upcomingservices" element={<ProtectedRoute element={<ProUpcomingService />} />} />
+              <Route path="/provider/scheduled-service" element={<ProtectedRoute element={<ScheduledService />} />} />
+              <Route path="/owner/servicehistory" element={<ProtectedRoute element={<ServiceHistory />} />} />
+              <Route path="/owner/notification" element={<ProtectedRoute element={<Notifications />} />} />
+              <Route path="/review" element={<ProtectedRoute element={<ReviewForm />} />} />
+              <Route path="/provider/rating&review" element={<ProtectedRoute element={<Reviews />} />} />
+              <Route path="/provider/service-history" element={<ProtectedRoute element={<ProviderServiceHistory />} />} />
+            </Routes>
+          </Router>
+        </AuthProvider>
+      </header>
+    </div>
+  );
 }
 
 export default App;

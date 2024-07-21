@@ -103,7 +103,7 @@ const Login = () => {
 
                 <button type="submit" className='submit-btn'>Login</button>
                 <p className='create-acc'>Not a member ? 
-                   <Link to='/'> Create a account </Link>
+                   <Link to='/login'> Create an account </Link>
                 </p>
                 </div>
             </form>

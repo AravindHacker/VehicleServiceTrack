@@ -67,11 +67,11 @@ html, body {
 }
 
 .profile-pic-div, .provider-profile-details {
-    transition: margin 0.3s ease; /* Add transition for smooth effect */
+    transition: margin 0.3s ease; 
 }
 
 .provider-profile-container .provider-profile-details {
-    margin-left: 0px; /* Reduce margin to maintain consistent space */
+    margin-left: 0px; 
 }
 
 @media screen and (max-width:768px) {

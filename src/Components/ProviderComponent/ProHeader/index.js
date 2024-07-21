@@ -1,7 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+
 import './index.css'
 
 const ProHeader=()=>{
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+      Cookies.remove('jwt_token'); 
+      navigate('/'); 
+  };
     return(
       <>  
         <div className='header-cont'>
@@ -13,7 +21,7 @@ const ProHeader=()=>{
                 <li className='provider-home-bar'>Home</li> 
                 </Link>
                 <Link to="/logout" className='provider-header-menu-link'>
-                  <li className='provider-logout'>LogOut</li>
+                  <li className='provider-logout' onClick={handleLogout}>LogOut</li>
                 </Link>  
             </ul>
         </div>
@@ -26,7 +34,7 @@ const ProHeader=()=>{
                <img src='https://cdn-icons-png.flaticon.com/128/2549/2549900.png' alt='Home'
                  className='provider-home-icon-size'/>
              </Link>
-             <Link to="/logout " className='provider-header-menu-link'>    
+             <Link to="/logout " className='provider-header-menu-link' onClick={handleLogout}>    
                <img src='https://cdn-icons-png.flaticon.com/128/4043/4043198.png' alt='logout'
                  className='provider-logout-icon-size'/>
              </Link> 

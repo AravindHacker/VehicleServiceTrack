@@ -39,7 +39,6 @@ const OwnerRegister = () => {
                     pin_code
                 }));
 
-                // Reset the form fields
                 setUsername('');
                 setEmail('');
                 setPassword('');
@@ -48,7 +47,7 @@ const OwnerRegister = () => {
                 setRole('Owner');
                 setPincode('');
 
-                navigate('/owner');
+                navigate('/');
             
         }  catch (error) {
             setMessage('Registration failed');

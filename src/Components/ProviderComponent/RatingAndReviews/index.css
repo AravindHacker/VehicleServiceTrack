@@ -5,7 +5,7 @@
 .reviwed-provider-container {
     padding: 0;
     background-color: azure;
-    min-height: 100vh; /* Ensure it covers at least the full viewport height */
+    min-height: 100vh; 
     display: flex;
     flex-direction: column;
 }

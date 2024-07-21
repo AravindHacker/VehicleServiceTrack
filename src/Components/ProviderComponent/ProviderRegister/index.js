@@ -49,7 +49,7 @@ const ServiceProviderForm = () => {
       const providerDetails = { ...formData, providerId };
       localStorage.setItem('ProviderInfo', JSON.stringify(providerDetails));
 
-      navigate('/provider');
+      navigate('/');
 
     } catch (error) {
       console.error('Error saving provider details:', error);

@@ -34,14 +34,12 @@ const OwnerDashboard = () => {
             <div className='owner-profile-cont'>
                 <div className='owner-profile-edit-cont'>
                     <button type='button' className='owner-edit-profile' onClick={onChangeProfile}>
-                        {userData.profile_pic_path && (
                             <img 
                                 src={userData.profilePic ? `${config.apiBaseUrl}/${userData.profilePic}` : placeholderImage} 
-
                                 alt="Profile" 
                                 className="owner-profile-pic" 
                             />
-                        )}
+                        
                     </button>
                     <div className='owner-profile-pic-div'>
                         {profileChange && <ProfilePic />}

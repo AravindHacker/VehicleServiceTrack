@@ -1,10 +1,11 @@
 
-
-.provider-reg{
-    background-color: aquamarine;
+.provider-reg {
+    margin: -20px;
     font-family: 'Roboto';
+    background-color: aquamarine;
 }
-.pro-title{
+
+.pro-title {
     text-align: center;
     font-size: 40px;
     font-weight: bold;
@@ -13,114 +14,129 @@
     border: 2px solid;
     padding: 10px;
     margin-left: 14em;
-    border-top:none;
+    border-top: none;
     border-left: none;
     border-right: none;
-    width:5em;
+    width: 5em;
 }
-.provider-cont{
+
+.provider-cont {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-.provider-register-pic{
+
+.provider-register-pic {
     margin: 50px;
-    width:35em;
+    width: 35em;
     padding-top: 10px;
     padding-left: 20px;
     position: fixed;
     border-radius: 10px;
 }
-.profile{
+
+.profile {
     display: flex;
     flex-direction: column;
-    width:40em;
+    width: 40em;
     padding-top: 30px;
 }
-.inputcont{
+
+.inputcont {
     padding: 7px;
-    width:33em;
+    width: 33em;
     margin-bottom: 20px;
 }
-.labelcont{
+
+.labelcont {
     font-size: 20px;
-}
-.pro-submit-btn{
-    font-size: 20px;
-    font-weight: bold;
-    background-color:darkorange;
-    width:20em;
-    padding:7px;
-    border-radius: 10px;
-    margin:30px 0px 20px 35px;
 }
 
-@media screen and (max-width:768px) {
-    *{
-        margin:30px
+.pro-submit-btn {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: darkorange;
+    width: 20em;
+    padding: 7px;
+    border-radius: 10px;
+    margin: 30px 0px 20px 35px;
+}
+
+@media screen and (max-width: 768px) {
+    * {
+        margin: 0; 
+        padding: 0; 
+        overflow-x: hidden;
     }
-     .pro-title{
-        margin-top: 40px;
-        padding: 20px;
-        margin-left: 60px;
-     }
-     .provider-reg{
-        margin-left: -10px;
-        margin: -50px;
-        width:40em;
-     }
-    .provider-cont{
+    .pro-title {
+        padding: 17px;
+        text-align: center;
+        margin: 20px 0px 50px 60px;
+        width:6em;
+    }
+    .provider-reg {
+        width: 40em;
+    }
+    .provider-cont {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-left: 50px;
     }
-    .profile{
+    .profile {
         padding-top: 0px;
         margin-left: 5em;
     }
-    .inputcont{
-        width:20em;
+    .inputcont {
+        width: 20em;
     }
-    .labelcont{
+    .labelcont {
         font-size: 17px;
     }
-    .provider-register-pic{
+    .provider-register-pic {
         display: none;
     }
-    .pro-submit-btn{
-        width:12em;
+    .pro-submit-btn {
+        width: 11em;
         font-weight: 100;
+        margin-left: 17px;
     }
 }
 
-@media screen and (min-width:769px) and (max-width:992px) {
-    *{
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    * {
         margin: 0;
         padding: 0;
     }
-    .pro-title{
+    .pro-title {
         font-size: 60px;
-        margin-left: 2em;
+        margin-left: 4em;
         padding: 20px;
         border-right: none;
-        width:7em;
+        width: 7em;
     }
-    .inputcont{
+    .provider-cont{
+     
+       align-items: center;
+       justify-content: center;
+    }
+    .inputcont {
         padding: 15px;
-        width:40em;
+        width: 30em;
         height: 20px;
         margin-bottom: 20px;
+        font-size: 18px;
     }
-    .labelcont{
+    .labelcont {
         font-size: 30px;
     }
-    .pro-submit-btn{
+    .pro-submit-btn {
         font-size: 25px;
         padding: 15px;
         margin: 30px 20px 20px 40px;
     }
-    .provider-register-pic{
+    .provider-register-pic {
         display: none;
     }
-} 
+}
