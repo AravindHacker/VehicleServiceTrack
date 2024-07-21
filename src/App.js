@@ -34,9 +34,9 @@ function App() {
             <Routes>
               <Route path="/" element={<Login />} />
               <Route path="/login-type" element={<FirstLogin />} />
+              <Route path="/owner-register"  element={<OwnerRegister />} />
+              <Route path="/provider-register"  element={<ServiceProviderForm/>} />
               
-              <Route path="/owner-register" element={<ProtectedRoute element={<OwnerRegister />} />} />
-              <Route path="/provider-register" element={<ProtectedRoute element={<ServiceProviderForm />} />} />
               <Route path="/owner" element={<ProtectedRoute element={<OwnerCom />} />} />
               <Route path="/provider" element={<ProtectedRoute element={<ProviderCom />} />} />
               <Route path="/owner/Profile info" element={<ProtectedRoute element={<ProfileInfo />} />} />
