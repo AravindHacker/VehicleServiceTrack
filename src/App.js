@@ -1,7 +1,5 @@
 import React from 'react';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
-
-
 import { AuthProvider } from './Components/AuthContext';
 import FirstLogin from './Components/FirstLogin';
 import Login from './Components/Login';
