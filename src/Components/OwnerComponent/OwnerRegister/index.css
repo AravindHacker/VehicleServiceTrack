@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.owner-body{
+    background-color:gold;
+    width:100%;
+    min-height: 100vh;
+    font-family: 'Roboto';
+}
+.owner-register{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.signup{
+
+    text-align: center;
+    font-size: 30px;
+    padding: 20px;
+}
+.register-cont{
+    padding-top:10px;
+    margin: 10px;
+    width:40em;
+   display: flex;
+   flex-direction: column;
+   gap:15px;
+    border-radius: 10px;
+    margin-right: 25em;
+}
+.label-name1{
+    font-size: 19px;
+}
+.user-box1{
+ padding: 7px;
+ width:27em;
+ border-radius: 5px;
+}
+.submit-btn1{
+    font-size: 15px;
+    padding: 10px;
+    width:23em;
+    margin: 25px 10px 10px 0px;
+    border-radius: 10px;
+    background-color: aqua;
+    cursor: pointer;
+}
+.owner-register-pic{
+    position: fixed;
+    border-radius: 30px;
+    height:30em ;
+    margin-top: 50px;
+    margin-left: 50px;
+    
+}
+@media screen and (max-width:768px) {
+   
+    .signup{
+        background-color: gold;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 0px;
+    }
+    .owner-body{
+        background-color: white;
+    }
+    .register-cont{
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: bisque;
+        padding: 50px;
+    }
+    .user-box1{
+        padding: 7px;
+        width:23em;
+        height: 35px;
+        border-radius: 5px;
+        margin-top: 10px;
+       }
+       .submit-btn1{
+        padding: 10px;
+        width:13em;
+        border-radius: 10px;
+        
+    }
+    .owner-register-pic{
+        display: none;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:992px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+     .signup{
+        padding-top: 30px;
+        font-size: 50px;
+     }
+    .owner-body{
+        margin-top: 0px;
+     }
+    .register-cont{
+        padding-left: 14em;
+    }
+    .label-name1{
+        font-size: 34px;
+    }
+    .user-box1{
+     padding: 15px;
+     width:44em;
+     height: 50px;
+     border-radius: 5px;
+    }
+    .owner-register-pic{
+        display: none;
+    }
+    .submit-btn1{
+        font-size: 30px;
+        width:18em;
+        margin: 30px 0px 23px 27px;
+    }
+}

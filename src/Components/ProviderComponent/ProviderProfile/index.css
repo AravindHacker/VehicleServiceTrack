@@ -1,0 +1,136 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.provider-details {
+    background-color:azure;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0.5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.provider-profile-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    padding-top: 5em;
+}
+
+.provider-profile-change {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.provider-profile-image-btn {
+    border: none;
+    margin: 20px;
+    cursor: pointer;
+    background-color: azure;
+
+}
+.provider-profile-image {
+    width: 20em;
+    height: 20em;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.profile-pic-div {
+    margin-top: 10px;
+    margin-left: 80px;
+    width:10%;
+}
+
+.provider-profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 20px; 
+    font-family:'Courier New', Courier, monospace;
+    font-size: 25px;
+    font-weight: 500;
+    z-index: 2;
+
+}
+.provider-details p span{
+    font-family: 'Roboto';
+    font-weight:600;
+    padding-left: 10px;
+    font-size: 20px;
+}
+
+.profile-pic-div, .provider-profile-details {
+    transition: margin 0.3s ease; /* Add transition for smooth effect */
+}
+
+.provider-profile-container .provider-profile-details {
+    margin-left: 0px; /* Reduce margin to maintain consistent space */
+}
+
+@media screen and (max-width:768px) {
+    
+    .provider-profile-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        padding-top: 2em;
+    }
+    .provider-profile-change{
+        align-items: center;
+        justify-content: center;
+    }
+.provider-profile-image-btn{
+    margin: 20px;
+}
+.provider-profile-image {
+  margin-left: 17em;
+    margin-top: 0px;
+    border-radius: 50%;
+}
+.profile-pic-div {
+    margin-left: 0px;
+}
+.provider-profile-details {
+   padding: 20px;
+    margin-top: 10px; 
+    font-size: 23px;
+    font-weight: 500;
+
+}
+
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+    .provider-profile-container {
+        flex-direction: column;
+        gap: 0;
+        padding-top: 2em;
+    }
+    .provider-profile-change{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .provider-profile-image-btn{
+        margin: 20px;
+    }
+    .provider-profile-image {
+        width:25em;
+      margin-left: 0;
+        border-radius: 20px;
+    }
+    .provider-profile-details {
+         margin-top: 10px; 
+         font-size: 30px;
+     }
+     .provider-details p span{
+        
+        font-size: 25px;
+    }
+}

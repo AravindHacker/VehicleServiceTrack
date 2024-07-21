@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.provider-service-history{
+    background-color: azure;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.table-container {
+    margin-top: 50px;
+}
+
+.notification-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.notification-table th, .notification-table td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.notification-table th {
+    background-color: #f2f2f2;
+}

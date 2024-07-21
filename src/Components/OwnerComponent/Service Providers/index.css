@@ -1,0 +1,124 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.service-cont-body{
+    background-color: rgb(236, 233, 202);
+    min-height: 100vh;
+    margin: 0;
+}
+.service-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:30px;
+    padding-top: 30px;
+    font-family: 'Roboto';
+}
+.each-provider{
+    border:1px solid;
+    display: flex;
+    flex-direction: row;
+    gap:5em;
+    padding: 40px;
+    padding-left: 70px;
+    border-radius: 25px;
+    width:50%;
+    background-color:rgb(243, 209, 149);
+}
+.profile-pic{
+    width:15em;
+    height: 17em;
+    border-radius: 30px;
+    margin-top: 10px;
+}
+.service-provider-details{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    font-size: 18px;
+}
+.pro-name{
+    font-size:30px;
+    font-weight: 600;
+}
+.pro-busname{
+    font-size: 27px;
+    font-weight: 400;
+}
+.pro-busadd{
+    font-size: 17px;
+    font-weight: 300;
+}
+.pro-sercat{
+    font-size: 23px;
+}
+.pro-ava{
+    font-size: 18px;
+}
+.prov-select-btn{
+    background-color:aqua;
+    font-size: 18px;
+    padding: 7px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:768px) {
+    .service-cont-body h1{
+        font-size: 27px;
+        font-weight: 600;
+    }
+    .each-provider{
+    gap:1em;
+    padding: 20px;
+    padding-left: 5px;
+    border-radius: 20px;
+    width:97%;
+}
+.profile-pic{
+    width:9em;
+    height: 10em;
+    border-radius: 50%;
+    margin-top: 20px;
+}
+.service-provider-details{
+    gap:0px;
+}
+}
+@media screen and (min-width:789px)and (max-width:992px) {
+    .service-cont-body h1{
+        font-size: 40px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .each-provider{
+        gap:4em;
+        padding: 30px;
+        padding-left: 50px;
+        border-radius: 20px;
+        width:90%;
+    }
+    .profile-pic{
+        border-radius: 20%;
+        margin-top: 10px;
+    }
+    .pro-name{
+        font-size:38px;
+        font-weight: 600;
+    }
+    .pro-busname{
+        font-size: 34px;
+        font-weight: 400;
+    }
+    .pro-busadd{
+        font-size: 20px;
+        font-weight: 300;
+    }
+    .pro-sercat{
+        font-size: 30px;
+    }
+}

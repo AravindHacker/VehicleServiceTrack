@@ -1,0 +1,23 @@
+
+.review-ratting-cont{
+    margin: 30px;
+    background-color:cyan;
+    padding: 20px;
+    padding-left: 30px;
+    font-size: 20px;
+    border: 2px solid red;
+    border-radius: 13px;
+}
+.rating-label{
+    padding-right: 10px;
+}
+.review-label{
+    padding-right: 20px;
+}
+.review-btn{
+    margin-top:20px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: orange;
+    border-radius: 7px;
+}

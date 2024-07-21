@@ -1,0 +1,17 @@
+
+
+.profile{
+    width:10%;
+}
+.uploaded-profile-pic{
+ display: none;
+ width:10%;
+}
+.upload-btn{
+    font-size: 18px;
+    padding: 7px;
+    margin-top: 10px;
+    width:7em;
+    background-color: aqua;
+    border-radius: 10px;
+}

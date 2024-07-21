@@ -1,0 +1,37 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.notification-service-cont {
+    background-color: rgb(236, 233, 202);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0px;
+    font-family: 'Roboto';
+    font-size: 20px;
+}
+.notificatin-service-body{
+    margin: 20px;
+}
+.appointment-cont{
+    list-style-type: none;
+}
+.each-appointment{
+    padding: 30px;
+    margin: 30px;
+    border: 2px solid red;
+    border-radius: 10px;
+    background-color:goldenrod;
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+@media screen and (max-width:768px) {
+    .notification-service-cont{
+        height: 100vh;
+    }
+}

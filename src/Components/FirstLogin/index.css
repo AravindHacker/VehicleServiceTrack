@@ -1,0 +1,77 @@
+.bg-cont{
+    background-color: white;
+}
+.first-login{
+    text-align: center;
+    font-family: 'Roboto';
+    padding-top: 30px;
+}
+.type-user{
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 50px;
+
+}
+.owner-img{
+    width:30em;
+}
+.user-name{
+    font-size: 45px;
+    font-family: 'Roboto';
+    font-weight: bold;
+}
+.provider-img{
+    padding-top: 15px;
+    width:18em;
+}
+.sec-link{
+    text-decoration: none;
+    color: chartreuse;
+}
+
+@media screen and (max-width:768px) {
+    .first-login{
+        font-size: 18px;
+    }
+    .type-user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0px;
+    }
+    .owner-img {
+        width:22em;
+    }
+    .provider-img{
+        width:15em;
+    }
+    .user-name{
+        text-align: center;
+        font-size: 26px;
+    }
+}
+@media screen and (min-width:769px) and (max-width:992px) {
+    .first-login{
+        font-size: 35px;
+        padding-top: 40px;
+    }
+    .type-user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 0px;
+    }
+    .owner-img {
+        width:32em;
+    }
+    .provider-img{
+        width:22em;
+    }
+    .user-name{
+        text-align: center;
+        font-size: 36px;
+    }
+}

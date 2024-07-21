@@ -1,0 +1,119 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:darkgreen;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    padding: 4px;
+}
+.home{
+    cursor: pointer;
+    transition: all;
+
+}
+.home:hover{
+    padding: 5px;
+    border: 3px solid white;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+.header-profile
+{
+    cursor: pointer;
+}
+.header-profile:hover
+{ 
+    padding: 5px;
+    border: 3px solid rgb(207, 92, 186);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+
+}
+.logout
+{
+    cursor: pointer;
+}
+.logout:hover{
+    padding: 5px;
+    border: 3px solid rgb(18, 215, 202);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+.header-menu-link{
+    text-decoration: none;
+    color: white;
+}
+.header-cont-icons{
+    display: none;
+}
+.home-icon-size{
+    width:40px;
+    height: 40px;
+   padding-top: 10px;
+}
+.profile-icon-size{
+    width: 50px;
+    height: 50px;
+    padding-top: 7px;
+
+}
+.logout-icon-size{
+    width:35px;
+    height: 35px;
+    padding-top: 13px;
+}
+@media screen and (max-width:768px) {
+    .header-cont{
+        display: none;
+    }
+    .header-cont-icons
+    {
+        background-color:lightgreen;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: 10px;
+        margin: 0px;
+        padding: 0px;
+        height: 60px;
+    }
+}
+@media screen and (min-width:769px) and (max-width:992px){
+    .header-cont{
+        display: none;
+    }
+    .header-cont-icons
+    {
+        background-color:lightgreen;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: 10px;
+    }   
+}
+@media screen and (max-width:1200px) {
+    .header-cont{
+        display: none;
+    }
+    .header-cont-icons
+    {
+        background-color:lightgreen;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: 10px;
+    }   
+    
+}

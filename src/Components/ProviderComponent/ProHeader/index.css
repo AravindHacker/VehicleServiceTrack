@@ -1,0 +1,116 @@
+
+
+.providers-menu-list{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color:darkgreen;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Roboto';
+    font-size: 20px;
+    padding: 4px;
+}
+.provider-home-bar{
+    cursor: pointer;
+    transition: all;
+
+}
+.provider-home-bar:hover{
+    padding: 5px;
+    border: 3px solid white;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+.provider-header-profile
+{
+    cursor: pointer;
+}
+.provider-header-profile:hover
+{ 
+    padding: 5px;
+    border: 3px solid rgb(207, 92, 186);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+
+}
+.provider-logout
+{
+    cursor: pointer;
+}
+.provider-logout:hover{
+    padding: 5px;
+    border: 3px solid rgb(18, 215, 202);
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+}
+.provider-header-menu-link{
+    text-decoration: none;
+    color: white;
+}
+.provider-header-cont-icons{
+    display: none;
+}
+.provider-home-icon-size{
+    width:40px;
+    height: 40px;
+   padding-top: 10px;
+}
+.provider-profile-icon-size{
+    width: 50px;
+    height: 50px;
+    padding-top: 7px;
+
+}
+.provider-logout-icon-size{
+    width:35px;
+    height: 35px;
+    padding-top: 13px;
+}
+@media screen and (max-width:768px) {
+    .provider-header-cont{
+        display: none;
+    }
+    .provider-header-cont-icons
+    {
+        background-color:lightgreen;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: 10px;
+        margin: 0px;
+        padding: 0px;
+        height: 60px;
+    }
+}
+@media screen and (min-width:769px) and (max-width:992px){
+    .provider-header-cont{
+        display: none;
+    }
+    .providerheader-cont-icons
+    {
+        background-color:lightgreen;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: 10px;
+    }   
+}
+@media screen and (max-width:1200px) {
+    .provider-header-cont{
+        display: none;
+    }
+    .provider-header-cont-icons
+    {
+        background-color:lightgreen;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        border-radius: 10px;
+    }   
+    
+}

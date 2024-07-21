@@ -1,0 +1,82 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.service-received-home {
+    background-color:azure;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+}
+.service-received-cont{
+    list-style-type: none;
+    margin: 10px;
+    padding: 15px;
+    padding-left: 3em;
+    font-size: 23px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+.each-service-received-cont{
+    border: 2px solid black;
+    padding: 20px;
+    border-radius: 20px;
+}
+.service-recived-info{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.service-id{
+    font-weight: bold;
+    padding-bottom: 13px;
+}
+.fix-appointment{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    max-width: 20%;
+    margin: 10px;
+}
+.appointment-header{
+ padding-top: 20px;
+}
+.appointment{
+    cursor: pointer;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color:aqua;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 19px;
+    margin-top: 20px;
+}
+.fix-date{
+    padding-top: 20px;
+}
+.appointment-btn{
+    background-color: aqua;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+@media screen and (max-width:768px) {
+    .service-received-cont{
+        padding: 0;
+        margin: 20px;
+        font-size: 20px;
+    }
+}
+@media screen and (min-width:769px) and (max-width:992px) {
+    .service-received-cont{
+        padding: 10px;
+        margin: 20px;
+        font-size: 22px;
+    }
+}

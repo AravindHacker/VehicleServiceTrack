@@ -1,0 +1,94 @@
+.sehdule-service-body {
+    background-color: azure;
+}
+.sehdule-service-body h2{
+    padding: 20px;
+    margin: 20px;
+    font-size: 40px;
+    color:chocolate;
+    font-weight: 900;
+}
+.schedule-service-container {
+    margin: 20px;
+    list-style-type: none;
+    font-family: 'Roboto';
+    padding-left: 20px;
+}
+
+.each-schedule-service {
+    border: 2px solid;   
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 20px;
+    padding: 25px;
+    padding-left: 40px;
+    border-radius: 10px;
+}
+
+.updating-schedul-service {
+    list-style-type: none;
+    margin: 10px;
+}
+
+.each-updating-schedul-service {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 30px;
+    align-items: center; /* Center items vertically */
+}
+
+.update-input {
+    width: 30px;
+    height: 30px; /* Ensure the radio button is big enough */
+    margin-top: 20px;
+    cursor: pointer;
+    accent-color: #007bff; /* Customize radio button color */
+}
+
+
+.update-labels {
+    padding-top: 20px;
+    padding-left: 20px;
+    cursor: pointer; /* Change cursor to pointer for labels */
+}
+
+.update-input:focus {
+    outline: none; /* Remove default focus outline */
+}
+
+@media screen and (max-width:768px) {
+    .schedule-service-container {   
+        padding-left: 0px;
+    }
+    .each-schedule-service {
+        margin-top: 0px;
+         padding: 20px;
+        padding-left: 20px;
+        gap:15px
+    }
+    .each-updating-schedul-service {
+        font-size: 20px;
+        gap: 0px;
+        padding-top: 15px;
+
+    }
+    .updating-schedul-service {
+        margin: 0px;
+        padding-top: 15px;
+    }
+    
+        
+.update-input {
+    width: 30px;
+  
+}
+.update-labels {
+   width:10%;
+}
+
+
+
+}
