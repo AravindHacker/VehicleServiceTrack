@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/VehicleServiceTrack/static/css/main.144dfb75.css",
-    "main.js": "/VehicleServiceTrack/static/js/main.f52c21b2.js",
+    "main.css": "/VehicleServiceTrack/static/css/main.f2e9f11b.css",
+    "main.js": "/VehicleServiceTrack/static/js/main.f08f88be.js",
     "static/js/592.68d504fc.chunk.js": "/VehicleServiceTrack/static/js/592.68d504fc.chunk.js",
     "index.html": "/VehicleServiceTrack/index.html",
-    "main.144dfb75.css.map": "/VehicleServiceTrack/static/css/main.144dfb75.css.map",
-    "main.f52c21b2.js.map": "/VehicleServiceTrack/static/js/main.f52c21b2.js.map",
+    "main.f2e9f11b.css.map": "/VehicleServiceTrack/static/css/main.f2e9f11b.css.map",
+    "main.f08f88be.js.map": "/VehicleServiceTrack/static/js/main.f08f88be.js.map",
     "592.68d504fc.chunk.js.map": "/VehicleServiceTrack/static/js/592.68d504fc.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.144dfb75.css",
-    "static/js/main.f52c21b2.js"
+    "static/css/main.f2e9f11b.css",
+    "static/js/main.f08f88be.js"
   ]
 }
