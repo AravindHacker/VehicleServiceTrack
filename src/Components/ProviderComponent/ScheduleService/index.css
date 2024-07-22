@@ -1,5 +1,6 @@
 .sehdule-service-body {
     background-color: azure;
+    min-height: 100vh;
 }
 .sehdule-service-body h2{
     padding: 20px;
@@ -82,7 +83,8 @@
     
         
 .update-input {
-    width: 30px;
+    width: 90px;
+    height: 15px;
   
 }
 .update-labels {
