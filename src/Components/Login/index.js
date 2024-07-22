@@ -11,6 +11,7 @@ const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [message, setMessage] = useState('');
+    const [loading, setLoading] = useState(false); 
     const navigate = useNavigate();
     const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
@@ -28,6 +29,7 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true); 
         try {
             const response = await axios.post(`${config.apiBaseUrl}/login`, { username, password });
             const jwtToken = response.data.token;
@@ -68,41 +70,47 @@ const Login = () => {
         } catch (error) {
             setMessage(error.response?.data?.message || 'Login failed');
             console.log(error.response?.data?.message);
+        } finally {
+            setLoading(false); 
         }
     };
 
     return (
         <div className='login-cont'>
-            <form className='login-form' onSubmit={handleSubmit}>
-                <div className='form-cont'>
-                    <p className='heading'>Login</p>
-                    <div className='user-inputs'>
-                        <label className='label-name'>Username</label>
-                        <input
-                            type="text"
-                            className='user-box'
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
-                            required
-                        />
+            {loading ? (
+                <div className='loader'>Loading...</div>
+            ) : (
+                <form className='login-form' onSubmit={handleSubmit}>
+                    <div className='form-cont'>
+                        <p className='heading'>Login</p>
+                        <div className='user-inputs'>
+                            <label className='label-name'>Username</label>
+                            <input
+                                type="text"
+                                className='user-box'
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className='user-inputs'>
+                            <label className='label-name'>Password</label>
+                            <input
+                                type="password"
+                                className='user-box'
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                required
+                            />
+                        </div>
+                        {message && <p className='login-error'>{message}</p>}
+                        <button type="submit" className='submit-btn'>Login</button>
+                        <p className='create-acc'>
+                            Not a member? <Link to='/login-type'>Create an account</Link>
+                        </p>
                     </div>
-                    <div className='user-inputs'>
-                        <label className='label-name'>Password</label>
-                        <input
-                            type="password"
-                            className='user-box'
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
-                            required
-                        />
-                    </div>
-                    {message && <p className='login-error'>{message}</p>}
-                    <button type="submit" className='submit-btn'>Login</button>
-                    <p className='create-acc'>
-                        Not a member? <Link to='/login-type'>Create an account</Link>
-                    </p>
-                </div>
-            </form>
+                </form>
+            )}
         </div>
     );
 };

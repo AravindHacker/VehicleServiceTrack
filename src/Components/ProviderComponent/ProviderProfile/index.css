@@ -71,7 +71,7 @@ html, body {
     font-size: 20px;
 }
 
-/* Media queries */
+
 @media screen and (max-width: 768px) {
     .provider-profile-container {
         flex-direction: column;

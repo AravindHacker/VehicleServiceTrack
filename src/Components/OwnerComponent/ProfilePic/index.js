@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import config from '../../../config';
+import './index.css';
 
-import './index.css'
-
-const ProfilePic = () => {
+const ProfilePic = ({ onUpload }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [profilePic, setProfilePic] = useState(null);
     const [uploadError, setUploadError] = useState('');
+    const [isUploading, setIsUploading] = useState(false);
 
     useEffect(() => {
         const ownerInfoStr = localStorage.getItem('OwnerInfo');
@@ -27,19 +27,21 @@ const ProfilePic = () => {
             return;
         }
 
+        setIsUploading(true);
+        setUploadError('');
+
         const formData = new FormData();
         formData.append('profilePic', selectedFile);
 
         const ownerInfoStr = localStorage.getItem('OwnerInfo');
         if (!ownerInfoStr) {
             setUploadError('Owner information not found. Please log in again.');
+            setIsUploading(false);
             return;
         }
 
         const ownerInfo = JSON.parse(ownerInfoStr);
         formData.append('ownerId', ownerInfo.id);
-        
-        console.log(formData)
 
         try {
             const response = await axios.post(`${config.apiBaseUrl}/upload`, formData, {
@@ -52,23 +54,26 @@ const ProfilePic = () => {
 
             ownerInfo.profilePic = filePath;
             localStorage.setItem('OwnerInfo', JSON.stringify(ownerInfo));
-            setUploadError('');
+            setIsUploading(false);
+            onUpload(filePath); 
         } catch (error) {
             console.error('Error uploading file:', error);
             setUploadError('Failed to upload image. Please try again.');
+            setIsUploading(false);
         }
     };
 
     return (
         <div className="profile">
             {profilePic ? (
-                <img  src={`${config.apiBaseUrl}/${profilePic}`} alt="Profile" className="uploaded-profile-pic" />
+                <img src={`${config.apiBaseUrl}/${profilePic}`} alt="Profile" className="uploaded-profile-pic" />
             ) : (
                 <p>Upload profile.</p>
             )}
             <input type="file" className="profile-size" onChange={handleFileChange} />
-            
-            <button onClick={handleUpload} className='upload-btn'>Upload</button>
+            <button onClick={handleUpload} className="upload-btn" disabled={isUploading}>
+                {isUploading ? 'Uploading...' : 'Upload'}
+            </button>
             {uploadError && <p className="error">{uploadError}</p>}
         </div>
     );

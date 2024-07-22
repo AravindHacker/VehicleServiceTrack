@@ -100,9 +100,7 @@ const RequestService = () => {
     }
     return (
        <div className='request-service-cont'> 
-           <div className='req-service-header'>
                 <Header />
-          </div> 
 
           <h2 className='req-header'>Request  Service</h2>
 

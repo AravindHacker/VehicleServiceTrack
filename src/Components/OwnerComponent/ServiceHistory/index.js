@@ -50,9 +50,9 @@ const ServiceHistory = () => {
 
     return (
         <div className='service-history-cont'>
-           <div className='service-header'>
+          
               <Header />
-           </div> 
+           
             <h2 className='service-history-header'>Service History</h2>
             {notifications.length > 0 ? (
                <div className="table-container"> 
@@ -83,7 +83,7 @@ const ServiceHistory = () => {
                     </table>
                </div>        
             ) : (
-                <p>No completed services yet.</p>
+                <p className='service-empty'>No completed services yet.</p>
             )}
         </div>
     );

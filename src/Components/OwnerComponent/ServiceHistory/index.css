@@ -15,8 +15,10 @@
 }
 
 .service-history-header {
-    padding-top: 20px;
+    padding-top: 30px;
+    font-size: 27px;
     text-align: center;
+
 }
 
 .table-container {
@@ -43,15 +45,17 @@
 .notification-table td {
     background-color: aquamarine;
 }
+.service-empty{
+    text-align: center;
+    padding-top:20em ;
+}
 
 @media screen and (max-width: 768px) {
     .table-container {
         margin: 10px auto;
         width: 100%;
     }
-    .service-history-header{
-        padding-top: 40px;
-    }
+   
     .notification-table {
         font-size: 14px;
         width: 100%;

@@ -7,11 +7,10 @@ import './index.css';
 const ProviderProfile = () => {
   const [providerDetails, setProviderDetails] = useState(null);
   const [profileChange, setProfileChange] = useState(false);
-  const placeholderImage="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png"
+  const placeholderImage = "https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png";
 
   useEffect(() => {
     const storedUserData = localStorage.getItem('ProviderInfo');
-    console.log("storedData:", storedUserData);
     if (storedUserData) {
       setProviderDetails(JSON.parse(storedUserData));
     }
@@ -25,27 +24,32 @@ const ProviderProfile = () => {
     setProfileChange(!profileChange);
   };
 
+  const handleUpload = (filePath) => {
+    setProviderDetails((prevData) => ({
+      ...prevData,
+      profilePic: filePath,
+    }));
+  };
+
   return (
     <div className='provider-details'>
       <ProHeader />
       <div className='provider-profile-container'>
         <div className='provider-profile-change'>
-           <button 
-              type='button' 
-              className='provider-profile-image-btn' 
-              onClick={onChangeProfile}
-            >
-              <img 
-              src={providerDetails.profilePic ? `${config.apiBaseUrl}/${providerDetails.profilePic}` : placeholderImage} 
-              alt="Profile" 
-                className="provider-profile-image" 
-              />
-            </button>
-
-            <div className='profile-pic-div'>
-              {profileChange && <ProviderProfilePic />}
-            </div> 
-
+          <button
+            type='button'
+            className='provider-profile-image-btn'
+            onClick={onChangeProfile}
+          >
+            <img
+              src={providerDetails.profilePic ? `${config.apiBaseUrl}/${providerDetails.profilePic}` : placeholderImage}
+              alt="Profile"
+              className="provider-profile-image"
+            />
+          </button>
+          <div className='profile-pic-div'>
+            {profileChange && <ProviderProfilePic onUpload={handleUpload} />}
+          </div>
         </div>
         <div className='provider-profile-details'>
           <p>Name: <span>{providerDetails.name}</span></p>

@@ -88,7 +88,7 @@ const ReviewForm = ({ ownerId }) => {
         </form>
       </div>
     ) : (
-      <p>No review needed at this time.</p>
+      <p></p>
     )
   );
 };

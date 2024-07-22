@@ -1,12 +1,12 @@
-
 import React, { useState, useEffect } from 'react';
-import config from '../../../config';
 import axios from 'axios';
+import config from '../../../config';
 
-const ProviderProfilePic = () => {
+const ProviderProfilePic = ({ onUpload }) => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [profilePic, setProfilePic] = useState(null);
     const [uploadError, setUploadError] = useState('');
+    const [isUploading, setIsUploading] = useState(false);
 
     useEffect(() => {
         const providerInfoStr = localStorage.getItem('ProviderInfo');
@@ -18,7 +18,6 @@ const ProviderProfilePic = () => {
 
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
-        console.log(event.target.files[0]);
     };
 
     const handleUpload = async () => {
@@ -27,21 +26,24 @@ const ProviderProfilePic = () => {
             return;
         }
 
+        setIsUploading(true);
+        setUploadError('');
+
         const formData = new FormData();
-        formData.append('provider-profilePic', selectedFile);
+        formData.append('profilePic', selectedFile);
 
         const providerInfoStr = localStorage.getItem('ProviderInfo');
         if (!providerInfoStr) {
             setUploadError('Provider information not found. Please log in again.');
+            setIsUploading(false);
             return;
         }
 
         const providerInfo = JSON.parse(providerInfoStr);
-        formData.append('ProviderId', providerInfo.id);
-        console.log('form data :',formData)
+        formData.append('providerId', providerInfo.id);
 
         try {
-            const response = await axios.post(`${config.apiBaseUrl}/providerpics`, formData, {
+            const response = await axios.post(`${config.apiBaseUrl}/upload`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -51,10 +53,12 @@ const ProviderProfilePic = () => {
 
             providerInfo.profilePic = filePath;
             localStorage.setItem('ProviderInfo', JSON.stringify(providerInfo));
-            setUploadError('');
+            setIsUploading(false);
+            onUpload(filePath); // Notify parent component of the upload
         } catch (error) {
             console.error('Error uploading file:', error);
             setUploadError('Failed to upload image. Please try again.');
+            setIsUploading(false);
         }
     };
 
@@ -66,7 +70,9 @@ const ProviderProfilePic = () => {
                 <p>Upload profile.</p>
             )}
             <input type="file" className="profile-size" onChange={handleFileChange} />
-            <button onClick={handleUpload} className="upload-btn">Upload</button>
+            <button onClick={handleUpload} className="upload-btn" disabled={isUploading}>
+                {isUploading ? 'Uploading...' : 'Upload'}
+            </button>
             {uploadError && <p className="error">{uploadError}</p>}
         </div>
     );

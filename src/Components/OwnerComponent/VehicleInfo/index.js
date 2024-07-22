@@ -35,7 +35,7 @@ const VehicleInfo = () => {
 
          <div className='vehicle-info'>
 
-            <h1>Vehicle Info</h1>
+            <h1>Vehicle Information</h1>
             {services.map((service, index) => (
                 <div key={index} className="service-info-item">
                   
