@@ -8,7 +8,7 @@ import './index.css';
 const ServiceProviders = () => {
     const navigate = useNavigate();
     const [providers, setProviders] = useState([]);
-
+    const defaultImage="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png"
     useEffect(() => {
         const fetchServiceInfo = async () => {
             try {
@@ -63,6 +63,7 @@ const ServiceProviders = () => {
                                     src={`${config.apiBaseUrl}/${provider.profile_pic_path}`}
                                     alt="Profile"
                                     className="profile-pic"
+                                    onError={(e) => e.target.src = defaultImage}
                                 />
                                                          
                             <div className="service-provider-details">

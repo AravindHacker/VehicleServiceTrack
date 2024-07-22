@@ -5,10 +5,10 @@ html, body {
 }
 
 .provider-details {
-    background-color:azure;
+    background-color: azure;
     min-height: 100vh;
     margin: 0;
-    padding: 0.5px;
+    padding: 0;
     display: flex;
     flex-direction: column;
 }
@@ -26,6 +26,7 @@ html, body {
     display: flex;
     flex-direction: column;
     width: 30%;
+    position: relative; 
 }
 
 .provider-profile-image-btn {
@@ -33,8 +34,8 @@ html, body {
     margin: 20px;
     cursor: pointer;
     background-color: azure;
-
 }
+
 .provider-profile-image {
     width: 20em;
     height: 20em;
@@ -43,94 +44,104 @@ html, body {
 }
 
 .profile-pic-div {
-    margin-top: 10px;
-    margin-left: 80px;
-    width:10%;
+    position: absolute; 
+    top: 100%; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; 
+    display: flex;
+    justify-content: center;
 }
 
 .provider-profile-details {
     display: flex;
     flex-direction: column;
     gap: 14px;
-    margin-top: 20px; 
-    font-family:'Courier New', Courier, monospace;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
     font-size: 25px;
     font-weight: 500;
     z-index: 2;
-
 }
-.provider-details p span{
+
+.provider-details p span {
     font-family: 'Roboto';
-    font-weight:600;
+    font-weight: 600;
     padding-left: 10px;
     font-size: 20px;
 }
 
-.profile-pic-div, .provider-profile-details {
-    transition: margin 0.3s ease; 
-}
-
-.provider-profile-container .provider-profile-details {
-    margin-left: 0px; 
-}
-
-@media screen and (max-width:768px) {
-    
+/* Media queries */
+@media screen and (max-width: 768px) {
     .provider-profile-container {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
-        padding-top: 2em;
-    }
-    .provider-profile-change{
         align-items: center;
-        justify-content: center;
-    }
-.provider-profile-image-btn{
-    margin: 20px;
-}
-.provider-profile-image {
-  margin-left: 17em;
-    margin-top: 0px;
-    border-radius: 50%;
-}
-.profile-pic-div {
-    margin-left: 0px;
-}
-.provider-profile-details {
-   padding: 20px;
-    margin-top: 10px; 
-    font-size: 23px;
-    font-weight: 500;
-
-}
-
-}
-@media screen and (min-width:768px) and (max-width:992px) {
-    .provider-profile-container {
-        flex-direction: column;
         gap: 0;
         padding-top: 2em;
     }
-    .provider-profile-change{
+
+    .provider-profile-change {
+        width: 100%;
         align-items: center;
         justify-content: center;
     }
 
-    .provider-profile-image-btn{
+    .provider-profile-image-btn {
         margin: 20px;
     }
+
     .provider-profile-image {
-        width:25em;
-      margin-left: 0;
+        width: 80%;
+        height: auto;
+        border-radius: 50%;
+        margin-left: 0;
+        margin-top: 0;
+    }
+
+    .profile-pic-div {
+        margin-left: 0;
+        position: static;
+        width: 100%; 
+        display: flex;
+        justify-content: center;
+    }
+
+    .provider-profile-details {
+        padding: 20px;
+        margin-top: 10px;
+        font-size: 23px;
+        font-weight: 500;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .provider-profile-container {
+        flex-direction: column;
+        gap: 0;
+        padding-top: 2em;
+    }
+
+    .provider-profile-change {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .provider-profile-image-btn {
+        margin: 20px;
+    }
+
+    .provider-profile-image {
+        width: 25em;
+        margin-left: 0;
         border-radius: 20px;
     }
+
     .provider-profile-details {
-         margin-top: 10px; 
-         font-size: 30px;
-     }
-     .provider-details p span{
-        
+        margin-top: 10px;
+        font-size: 30px;
+    }
+
+    .provider-details p span {
         font-size: 25px;
     }
 }

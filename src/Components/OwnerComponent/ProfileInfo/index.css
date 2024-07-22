@@ -24,7 +24,7 @@ html, body {
     padding-top: 4em;
     display: flex;
     flex-direction: column;
-    width:30%;
+    width: 30%;
 }
 
 .owner-profile-pic {
@@ -71,13 +71,24 @@ html, body {
         margin: 10px;
     }
     .owner-profile-edit-cont {
-        padding-top: 20px;
+        padding-top: 30px;
+        display: flex;
+        align-items: center;
+        gap:10px;
+        width: 100%;
     }
-    .owner-profile-pic{
-        width:15em;
-        height: 15em;
-        border-radius: 50%;
-       margin-left: 3em;
+   
+    .owner-profile-pic {
+        width: 80%;
+        height: 100%;
+        border-radius: 10%;
+    }
+    .owner-profile-pic-div {
+        padding-left: 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
     }
     .owner-personal-details {
         padding: 30px;
@@ -86,26 +97,26 @@ html, body {
     .lable-name {
         font-size: 20px;
     }
-
 }
-@media screen and (min-width:769px) and (max-width:992px){
-    .owner-profile-cont{
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .owner-profile-cont {
         flex-direction: column;
-        justify-content:center;
+        justify-content: center;
         align-items: center;
         padding-top: 0em;
         padding-left: 0;
     }
-    .owner-profile-pic{
-        width:25em;
-        height: 17em;;
+    .owner-profile-pic {
+        width: 25em;
+        height: 17em;
     }
-    .owner-profile-pic-div{
+    .owner-profile-pic-div {
         padding-top: 50px;
     }
-   .owner-personal-details{
-    gap:30px;
-    padding-left: 10px;
-    padding-top: 30px;
-   }
+    .owner-personal-details {
+        gap: 30px;
+        padding-left: 10px;
+        padding-top: 30px;
+    }
 }

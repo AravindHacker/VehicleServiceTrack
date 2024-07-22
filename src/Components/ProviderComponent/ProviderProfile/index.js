@@ -35,16 +35,17 @@ const ProviderProfile = () => {
               className='provider-profile-image-btn' 
               onClick={onChangeProfile}
             >
-            <img 
-            src={providerDetails.profilePic ? `${config.apiBaseUrl}/${providerDetails.profilePic}` : placeholderImage} 
-            alt="Profile" 
-              className="provider-profile-image" 
-            />
-           
+              <img 
+              src={providerDetails.profilePic ? `${config.apiBaseUrl}/${providerDetails.profilePic}` : placeholderImage} 
+              alt="Profile" 
+                className="provider-profile-image" 
+              />
             </button>
+
             <div className='profile-pic-div'>
               {profileChange && <ProviderProfilePic />}
             </div> 
+
         </div>
         <div className='provider-profile-details'>
           <p>Name: <span>{providerDetails.name}</span></p>

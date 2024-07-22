@@ -37,26 +37,26 @@
     flex-direction: row;
     gap: 10px;
     font-size: 30px;
-    align-items: center; /* Center items vertically */
+    align-items: center; 
 }
 
 .update-input {
     width: 30px;
-    height: 30px; /* Ensure the radio button is big enough */
+    height: 30px; 
     margin-top: 20px;
     cursor: pointer;
-    accent-color: #007bff; /* Customize radio button color */
+    accent-color: #007bff; 
 }
 
 
 .update-labels {
     padding-top: 20px;
     padding-left: 20px;
-    cursor: pointer; /* Change cursor to pointer for labels */
+    cursor: pointer; 
 }
 
 .update-input:focus {
-    outline: none; /* Remove default focus outline */
+    outline: none; 
 }
 
 @media screen and (max-width:768px) {
