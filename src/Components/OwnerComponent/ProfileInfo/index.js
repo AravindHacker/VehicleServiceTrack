@@ -7,7 +7,7 @@ import './index.css';
 const OwnerDashboard = () => {
     const [userData, setUserData] = useState(null);
     const [profileChange, setProfileChange] = useState(false);
-    const placeholderImage = "https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png";
+    const placeholderImage = "https://icon-library.com/images/profile-png-icon/profile-png-icon-25.jpg";
 
     useEffect(() => {
         const fetchData = async () => {
