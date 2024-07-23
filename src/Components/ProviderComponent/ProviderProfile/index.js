@@ -19,7 +19,6 @@ const ProviderProfile = () => {
   }, []);
 
   const fetchProviderDetails = async () => {
-    // Fetch provider details from your backend
     const response = await fetch(`${config.apiBaseUrl}/provider-details`, {
       method: 'GET',
       headers: {
@@ -56,7 +55,6 @@ const ProviderProfile = () => {
 
   const getProfileImageUrl = () => {
     if (providerDetails.profilePic) {
-      // Add a unique query parameter to prevent caching
       return `${config.apiBaseUrl}/${providerDetails.profilePic}?timestamp=${new Date().getTime()}`;
     }
     return placeholderImage;

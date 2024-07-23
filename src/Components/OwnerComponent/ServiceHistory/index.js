@@ -12,8 +12,9 @@ const ServiceHistory = () => {
         const fetchNotifications = async () => {
             try {
                 const token = Cookies.get('token');
-                
-                console.log('Fetching service status updates...');
+                 
+                const storedUserData = JSON.parse(localStorage.getItem('OwnerInfo'));
+                const ownerId = storedUserData?.id;             
                 const statusResponse = await axios.get(`${config.apiBaseUrl}/All-update-status`, {
                     headers: { Authorization: `Bearer ${token}` }
                 });
@@ -31,8 +32,7 @@ const ServiceHistory = () => {
 
                 const completedNotifications = serviceRequests.filter(request => 
                     statusUpdates.some(update => 
-                        update.owner_id === request.owner_id ||
-                        update.status === 'completed'
+                          request.owner_id  === ownerId && ( update.owner_id === request.owner_id ||   update.status === 'completed' )
                     )
                 );
                 console.log('Completed Notifications:', completedNotifications);
