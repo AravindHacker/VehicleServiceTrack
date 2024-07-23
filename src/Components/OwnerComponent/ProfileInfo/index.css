@@ -99,8 +99,11 @@ html, body {
         padding-top: 50px;
     }
     .lable-name {
+        font-size: 23px;
+    }
+    .owner-lable-name{
         font-size: 25px;
-        font-weight: bold;
+        font-weight: 600;
     }
 }
 

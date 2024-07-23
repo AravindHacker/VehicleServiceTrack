@@ -52,7 +52,9 @@ const OwnerDashboard = () => {
                     </div>
                 </div>
                 <div className="owner-personal-details">
-                    <p className="label-name">Username: <span className="owner-label-name">{userData.username}</span></p>
+
+                    <p className="label-name">Id: <span className="owner-label-name">{userData.id}</span></p>
+                    <p className="label-name">Name: <span className="owner-label-name">{userData.username}</span></p>
                     <p className="label-name">Email: <span className="owner-label-name">{userData.email}</span></p>
                     <p className="label-name">Password: <span className="owner-label-name"> ******</span></p>
                     <p className="label-name">Contact: <span className="owner-label-name">{userData.contact}</span></p>

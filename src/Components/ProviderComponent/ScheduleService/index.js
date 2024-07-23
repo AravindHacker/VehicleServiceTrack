@@ -18,6 +18,7 @@ const ScheduledService = () => {
     const [appointmentData, setAppointmentData] = useState([]);
     const [filteredServiceRequests, setFilteredServiceRequests] = useState([]);
     const [message, setMessage] = useState('');
+    const [providerId, setProviderId] = useState('');
 
     useEffect(() => {
         const fetchServiceRequests = async () => {
@@ -61,63 +62,63 @@ const ScheduledService = () => {
     useEffect(() => {
         const currentDate = new Date().toISOString().split('T')[0];
         console.log("currentDate:", currentDate);
+        const providerDetails = JSON.parse(localStorage.getItem('ProviderInfo'));
+        setProviderId(providerDetails.id);
+
         const filteredRequests = appointmentData.filter(request =>
-            request.appointment_date === currentDate
+            request.appointment_date === currentDate && request.provider_id === providerDetails.id
         );
 
         console.log("filteredRequests:", filteredRequests);
         setFilteredServiceRequests(filteredRequests);
     }, [serviceRequests, appointmentData]);
 
-    console.log("serviceRequests:",serviceRequests)
     const handleStatusChange = async (event, requestId) => {
         const newStatus = event.target.value;
         setSelectedStatus(newStatus);
-        const providerDetails = JSON.parse(localStorage.getItem('ProviderInfo'));
-         const providerId = providerDetails.id;
-    
+
         try {
             const token = Cookies.get('token');
             console.log("Handling status change for requestId:", requestId);
             console.log("Current serviceRequests:", serviceRequests);
-    
-            const requestToUpdate = filteredServiceRequests.find(request => request.id === requestId ===providerId);
+
+            const requestToUpdate = filteredServiceRequests.find(request => request.id === requestId);
             console.log("requestToUpdate:", requestToUpdate);
-    
+
             if (!requestToUpdate) {
                 console.error(`Service request with ID ${requestId} not found.`);
                 return;
             }
-    
-            const correspondingAppointment = appointmentData.find(appointment => appointment.provider_id === requestToUpdate.provider_id && appointment.provider_id === providerId);
+
+            const correspondingAppointment = appointmentData.find(appointment => appointment.provider_id === providerId);
             console.log('correspondingAppointment:', correspondingAppointment);
-    
+
             if (!correspondingAppointment) {
-                console.error(`Corresponding appointment for provider ID ${requestToUpdate.provider_id} not found.`);
+                console.error(`Corresponding appointment for provider ID ${providerId} not found.`);
                 return;
             }
-    
+
             await axios.post(`${config.apiBaseUrl}/update-status`, {
                 status: newStatus,
                 serviceId: correspondingAppointment.id,
                 ownerId: correspondingAppointment.owner_id,
-                providerId: requestToUpdate.provider_id
+                providerId: providerId
             }, {
                 headers: { Authorization: `Bearer ${token}` }
             });
-    
+
             const updatedRequests = serviceRequests.map(request =>
                 request.id === requestId ? { ...request, status: newStatus } : request
             );
             setServiceRequests(updatedRequests);
-    
+
             alert('Status updated successfully.');
         } catch (error) {
             console.error('Error updating status:', error);
             alert('An error occurred while updating status.');
         }
     };
-    
+
     const currentDate = new Date().toLocaleDateString();
 
     return (
@@ -139,7 +140,6 @@ const ScheduledService = () => {
                                     <h3>Mark the tasks as completed after finishing each one:</h3>
                                     {serviceTrack.map(eachId => (
                                         <li key={eachId.id} className='each-updating-schedul-service'>
-                                          
                                             <input
                                                 type="checkbox"
                                                 name={`status-${request.id}`}
