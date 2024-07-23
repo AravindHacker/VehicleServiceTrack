@@ -13,8 +13,28 @@ const ProviderProfile = () => {
     const storedUserData = localStorage.getItem('ProviderInfo');
     if (storedUserData) {
       setProviderDetails(JSON.parse(storedUserData));
+    } else {
+      fetchProviderDetails();
     }
   }, []);
+
+  const fetchProviderDetails = async () => {
+    // Fetch provider details from your backend
+    const response = await fetch(`${config.apiBaseUrl}/provider-details`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      setProviderDetails(data);
+      localStorage.setItem('ProviderInfo', JSON.stringify(data));
+    } else {
+      console.error('Failed to fetch provider details');
+    }
+  };
 
   if (!providerDetails) {
     return <div>Loading...</div>;
@@ -29,6 +49,17 @@ const ProviderProfile = () => {
       ...prevData,
       profilePic: filePath,
     }));
+
+    const updatedData = { ...providerDetails, profilePic: filePath };
+    localStorage.setItem('ProviderInfo', JSON.stringify(updatedData));
+  };
+
+  const getProfileImageUrl = () => {
+    if (providerDetails.profilePic) {
+      // Add a unique query parameter to prevent caching
+      return `${config.apiBaseUrl}/${providerDetails.profilePic}?timestamp=${new Date().getTime()}`;
+    }
+    return placeholderImage;
   };
 
   return (
@@ -42,7 +73,7 @@ const ProviderProfile = () => {
             onClick={onChangeProfile}
           >
             <img
-              src={providerDetails.profilePic ? `${config.apiBaseUrl}/${providerDetails.profilePic}` : placeholderImage}
+              src={getProfileImageUrl()}
               alt="Profile"
               className="provider-profile-image"
             />
