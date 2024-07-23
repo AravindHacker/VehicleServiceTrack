@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import ProfilePic from '../ProfilePic';
 import Header from '../../Header';
+import config from '../../../config';
 import './index.css';
 
 const OwnerDashboard = () => {
@@ -32,16 +33,6 @@ const OwnerDashboard = () => {
             ...prevData,
             profilePic: filePath,
         }));
-
-        const updatedData = { ...userData, profilePic: filePath };
-        localStorage.setItem('OwnerInfo', JSON.stringify(updatedData));
-    };
-
-    const getProfileImageUrl = () => {
-        if (userData.profilePic) {
-            return `https://servicetrack-backend.onrender.com${userData.profilePic}`;
-        }
-        return placeholderImage;
     };
 
     return (
@@ -51,7 +42,7 @@ const OwnerDashboard = () => {
                 <div className="owner-profile-edit-cont">
                     <button type="button" className="owner-edit-profile" onClick={onChangeProfile}>
                         <img
-                            src={getProfileImageUrl()}
+                            src={userData.profilePic ? `${config.apiBaseUrl}/${userData.profilePic}` : placeholderImage}
                             alt="Profile"
                             className="owner-profile-pic"
                         />
