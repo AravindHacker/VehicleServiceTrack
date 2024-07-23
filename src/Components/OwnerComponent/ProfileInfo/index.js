@@ -39,7 +39,7 @@ const OwnerDashboard = () => {
 
     const getProfileImageUrl = () => {
         if (userData.profilePic) {
-            return `https://aravindhacker.github.io/VehicleServiceTrack/${userData.profilePic.replace('public/', '')}`;
+            return `https://servicetrack-backend.onrender.com${userData.profilePic}`;
         }
         return placeholderImage;
     };
