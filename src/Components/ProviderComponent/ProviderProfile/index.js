@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProviderProfilePic from '../proProfilepic';
 import ProHeader from '../ProHeader';
-import config from '../../../config';
 import './index.css';
 
 const ProviderProfile = () => {
@@ -29,6 +28,16 @@ const ProviderProfile = () => {
       ...prevData,
       profilePic: filePath,
     }));
+
+    const updatedData = { ...providerDetails, profilePic: filePath };
+    localStorage.setItem('ProviderInfo', JSON.stringify(updatedData));
+  };
+
+  const getProfileImageUrl = () => {
+    if (providerDetails.profilePic) {
+      return `https://aravindhacker.github.io/VehicleServiceTrack/${providerDetails.profilePic.replace('public/', '')}`;
+    }
+    return placeholderImage;
   };
 
   return (
@@ -42,7 +51,7 @@ const ProviderProfile = () => {
             onClick={onChangeProfile}
           >
             <img
-              src={providerDetails.profilePic ? `${config.apiBaseUrl}/${providerDetails.profilePic}` : placeholderImage}
+              src={getProfileImageUrl()}
               alt="Profile"
               className="provider-profile-image"
             />

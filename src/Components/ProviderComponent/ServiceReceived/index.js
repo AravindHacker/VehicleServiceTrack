@@ -133,18 +133,21 @@ const ServiceRequests = () => {
                                     <lable className="fix-date">Appointment Date:</lable>
                                     <input
                                         type="date"
+                                        className='appointemtn-input'
                                         value={appointmentDate}
                                         onChange={(e) => setAppointmentDate(e.target.value)}
                                     />
                                     <label className="fix-date">Appintment Time</label>
                                      <input
                                         type="time"
+                                        className='appointemtn-input'
                                         value={appointmentTime}
                                         onChange={(e) => setAppointmentTime(e.target.value)}
                                     />
                                     <label className="fix-date">Service Detailes:</label>
                                     <textarea
                                         value={serviceDetails}
+                                        className='appointemtn-input'
                                         onChange={(e) => setServiceDetails(e.target.value)}
                                         placeholder="Service details"
                                     />

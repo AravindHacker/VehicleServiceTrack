@@ -72,6 +72,12 @@ html, body {
         margin: 20px;
         font-size: 20px;
     }
+    .appointemtn-input{
+        width:100%;
+    }
+    .fix-date{
+        width:100%;
+    }
 }
 @media screen and (min-width:769px) and (max-width:992px) {
     .service-received-cont{

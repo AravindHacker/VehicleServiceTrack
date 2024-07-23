@@ -6,7 +6,6 @@ import './index.css'
 
 const Notifications = () => {
     const [notifications, setNotifications] = useState([]);
-    const [shouldDisplayForm, setShouldDisplayForm] = useState(false); 
 
     useEffect(() => {
         const fetchNotifications = async () => {
@@ -20,7 +19,6 @@ const Notifications = () => {
                  const ownerUpdates = response.data.filter(update => update.owner_id === ownerId);
                  if (ownerUpdates.length > 0) {
                      setNotifications(ownerUpdates);
-                     setShouldDisplayForm(true);
                  }
             } catch (error) {
                 console.error('Error fetching notifications:', error);
@@ -31,9 +29,9 @@ const Notifications = () => {
     }, []);
 
     return (
-        shouldDisplayForm ?(
+       
         <div >
-            <h2>Notifications</h2>
+            <h2>Service Updates</h2>
             <ul className='notification-container'>
                 {notifications.map(notification => (
                     <li key={notification.id}>
@@ -45,9 +43,7 @@ const Notifications = () => {
                 ))}
             </ul>
         </div>
-        ):(
-            <p></p>
-        )
+       
     );
 };
 
