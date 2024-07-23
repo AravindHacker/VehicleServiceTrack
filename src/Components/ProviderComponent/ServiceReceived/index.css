@@ -78,6 +78,10 @@ html, body {
     .fix-date{
         width:100%;
     }
+    .fix-appointment{
+        
+        max-width: 70%;
+    }
 }
 @media screen and (min-width:769px) and (max-width:992px) {
     .service-received-cont{

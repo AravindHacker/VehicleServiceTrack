@@ -55,12 +55,13 @@ html, body {
 
 .lable-name {
     font-family: 'Roboto';
-    font-size: 25px;
+    font-size: 26px;
     color: coral;
 }
 
 .owner-lable-name {
     color: black;
+    font-weight:bold ;
 }
 
 @media screen and (max-width: 768px) {

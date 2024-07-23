@@ -123,7 +123,7 @@ const RequestService = () => {
                     <input type="text" name="year" value={formData.year} onChange={handleChange} required className='req-input'/>
                 </label>
 
-                <label>
+                <label >
                     VIN <span className='span-tag'>(Vehicle Identification Number)</span>:
                     <input type="text" name="vin" value={formData.vin} onChange={handleChange} required className='req-input'/>
                 </label>
