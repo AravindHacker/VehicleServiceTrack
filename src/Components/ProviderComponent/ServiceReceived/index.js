@@ -144,7 +144,7 @@ const ServiceRequests = () => {
                                         value={appointmentTime}
                                         onChange={(e) => setAppointmentTime(e.target.value)}
                                     />
-                                    <label className="fix-date">Service Detailes:</label>
+                                    <label className="fix-date">Service Details:</label>
                                     <textarea
                                         value={serviceDetails}
                                         className='appointemtn-input'
