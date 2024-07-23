@@ -112,7 +112,7 @@ const ServiceRequests = () => {
                         <li key={request.id}  className='each-service-received-cont'>
                           <div className='service-recived-info' >
                             <p className='service-id'>Service Request ID: {request.id}</p>
-                            <p>Provider ID: {request.provider_id}</p>
+                            <p>Owner ID: {request.owner_id}</p>
                             <p>Vehicle Make: {request.vehicle_make}</p>
                             <p>Vehicle Model: {request.vehicle_model}</p>
                             <p>License Plate: {request.license_plate}</p>

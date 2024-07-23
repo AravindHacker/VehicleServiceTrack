@@ -78,7 +78,9 @@ const Login = () => {
     return (
         <div className='login-cont'>
             {loading ? (
-                <div className='loader'>Loading...</div>
+                <div className='loading-backdrop'>
+                    <div className='loader'></div>
+                </div>
             ) : (
                 <form className='login-form' onSubmit={handleSubmit}>
                     <div className='form-cont'>

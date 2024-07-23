@@ -5,7 +5,7 @@ import './index.css'
 const FirstLogin = () => {
   return (
     <div className='bg-cont'>
-        <h1 className='first-login'>Select which type You are Locking ?</h1>
+        <h1 className='first-login'>Welcome! Please Select Your Role </h1>
         <div className='type-user'>
               <Link to='/owner-register' className='sec-link'>
 

@@ -73,13 +73,15 @@ const ScheduledService = () => {
     const handleStatusChange = async (event, requestId) => {
         const newStatus = event.target.value;
         setSelectedStatus(newStatus);
+        const providerDetails = JSON.parse(localStorage.getItem('ProviderInfo'));
+         const providerId = providerDetails.id;
     
         try {
             const token = Cookies.get('token');
             console.log("Handling status change for requestId:", requestId);
             console.log("Current serviceRequests:", serviceRequests);
     
-            const requestToUpdate = filteredServiceRequests.find(request => request.id === requestId);
+            const requestToUpdate = filteredServiceRequests.find(request => request.id === requestId ===providerId);
             console.log("requestToUpdate:", requestToUpdate);
     
             if (!requestToUpdate) {
@@ -87,7 +89,7 @@ const ScheduledService = () => {
                 return;
             }
     
-            const correspondingAppointment = appointmentData.find(appointment => appointment.provider_id === requestToUpdate.provider_id);
+            const correspondingAppointment = appointmentData.find(appointment => appointment.provider_id === requestToUpdate.provider_id && appointment.provider_id === providerId);
             console.log('correspondingAppointment:', correspondingAppointment);
     
             if (!correspondingAppointment) {
@@ -134,7 +136,7 @@ const ScheduledService = () => {
                                 <p>License Plate: {request.license_plate}</p>
                                 <p>Service Type: {request.service_type}</p>
                                 <ul className='updating-schedul-service'>
-                                    <h3>Click the boxes after Finishing the work accordingly</h3>
+                                    <h3>Mark the tasks as completed after finishing each one:</h3>
                                     {serviceTrack.map(eachId => (
                                         <li key={eachId.id} className='each-updating-schedul-service'>
                                           

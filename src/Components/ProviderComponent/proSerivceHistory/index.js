@@ -67,7 +67,7 @@ const ProviderServiceHistory = ({ ownerId }) => {
                                 <th>Vehicle Make</th>
                                 <th>Vehicle Model</th>
                                 <th>License Plate</th>
-                                <th>Provider Id</th>
+                                <th>Owner Id</th>
                                 <th>Serviced Date</th>
                             </tr>
                         </thead>
@@ -78,7 +78,7 @@ const ProviderServiceHistory = ({ ownerId }) => {
                                     <td>{notification.vehicle_make}</td>
                                     <td>{notification.vehicle_model}</td>
                                     <td>{notification.license_plate}</td>
-                                    <td> {notification.provider_id}</td>
+                                    <td> {notification.owner_id}</td>
                                     <td>{new Date().toLocaleDateString()}</td>
                                     
                                 </tr>

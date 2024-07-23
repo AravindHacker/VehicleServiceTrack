@@ -6,7 +6,7 @@ import './index.css'
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
-    
+    const defaultImage="https://cdn-icons-png.flaticon.com/512/13695/13695871.png"
 
     useEffect(() => {
         const storedUserData = JSON.parse(localStorage.getItem('ProviderInfo'));
@@ -33,7 +33,9 @@ const Reviews = () => {
             {reviews.length > 0 ? (
                 reviews.map(review => (
                     <div key={review.id} className='provider-review-rating'>
-                        <img src={`${config.apiBaseUrl}/${review.profile_pic}`} alt="Profile"  className='owenr-reviewd-profile' />
+                        <img src={`${config.apiBaseUrl}/${review.profile_pic}`} alt="Profile"  className='owenr-reviewd-profile' 
+                                onError={(e) => e.target.src = defaultImage}
+                       />
                        <div className='review-rating-details'>
                             <p className='reviewed-name'><strong> {review.owner_name}</strong></p>
                             <p className='rating-color'> {'★'.repeat(review.rating) + '☆'.repeat(5 - review.rating)}</p>

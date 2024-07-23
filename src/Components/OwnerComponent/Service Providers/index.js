@@ -8,7 +8,7 @@ import './index.css';
 const ServiceProviders = () => {
     const navigate = useNavigate();
     const [providers, setProviders] = useState([]);
-    const defaultImage="https://www.seekpng.com/png/detail/966-9665493_my-profile-icon-blank-profile-image-circle.png"
+    const defaultImage="https://cdn-icons-png.flaticon.com/512/13695/13695871.png"
     useEffect(() => {
         const fetchServiceInfo = async () => {
             try {
@@ -60,7 +60,7 @@ const ServiceProviders = () => {
                     providers.map((provider) => (
                         <div key={provider.id} className="each-provider">
                            <img
-                                    src={`${config.apiBaseUrl}/${provider.profile_pic_path}`}
+                                    src={`${config.apiBaseUrl}/${provider.profile_pic_path}` }
                                     alt="Profile"
                                     className="profile-pic"
                                     onError={(e) => e.target.src = defaultImage}
